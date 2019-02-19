@@ -1,0 +1,7 @@
+<div class="form-group row">
+  <label [attr.for]="id" class="bmd-label-floating"> {{ label }} </label>
+  <input [type]="type" [id]="id" class="form-control" [readonly]="!!isReadOnly"
+  [(ngModel)]="value">
+  <app-error-msg [control]="control" [label]="label">
+  </app-error-msg>
+</div>

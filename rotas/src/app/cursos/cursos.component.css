@@ -1,0 +1,11 @@
+.gridBtn{
+    text-align: center;
+    margin-left: 10px;
+}
+
+@media(max-width:320px){
+    .btnVoltarPagina{
+        margin-top: 15px;
+        margin-right: 10px;
+    }
+}

@@ -1,0 +1,14 @@
+<div>
+    <div class="form-group">
+<h2>Sign in:</h2>
+    </div>
+  <div class="form-group">
+    <label for="usuario" class="bmd-label-floating">Usuário</label>
+    <input [(ngModel)]="usuario.nome" id="usuario" class="form-control" placeholder="Digite seu login">
+  </div>
+  <div class="form-group bmd-form-group">
+    <label for="senha" class="bmd-label-floating">Senha</label>
+    <input [(ngModel)]="usuario.senha" id="senha" class="form-control" type="password" placeholder="Digite sua senha">
+  </div>
+  <button type="submit" class="btn btn-secondary" (click)="fazerLogin()">Login</button>
+</div>

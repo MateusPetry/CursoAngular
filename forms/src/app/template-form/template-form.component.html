@@ -1,0 +1,126 @@
+<br><br>
+<div class= "container">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <div class="form-group">
+<h2>Sign in:</h2>
+  </div>
+
+  <div class="form-group row"
+  [ngClass]="aplicaCssErro(nome)">
+  
+  <div class="col-sm-12">
+  <label for="nome" class="bmd-label-floating">Nome:</label>
+  <input type="text" name="nome" id="nome" class="form-control" 
+  placeholder="Digite seu nome" [ngModel]="usuario.nome" 
+  required #nome="ngModel">
+
+  <app-campo-control-erro 
+  [mostrarErro]="verificaValidTouched(nome)" 
+  msgErro="Nome é obrigatório.">
+  </app-campo-control-erro>
+
+  </div>
+</div>
+
+<div class="form-group row" [ngClass]="aplicaCssErro(email)">
+<div class="col-sm-12">
+  <br>
+  <label for="email" class="bmd-label-floating">Email:</label>
+  <input  id="email" name="email" class="form-control" type="email" 
+  placeholder="Digite seu email" [ngModel]="usuario.email" required email #email="ngModel">
+
+ <app-campo-control-erro 
+  [mostrarErro]="verificaValidTouched(email)" 
+  msgErro="Email é inválido.">
+  </app-campo-control-erro>
+  </div>
+</div>
+<br>
+
+<div ngModelGroup="Endereco">
+
+<div class="form-group row">
+  <div class="col-md-3" [ngClass]="aplicaCssErro(cep)">
+      <label for="cep" class="bmd-label-floating">CEP:</label>
+      <input  id="cep" name="cep" class="form-control" type="text" 
+  placeholder="Digite seu CEP" ngModel required #cep="ngModel"
+  (blur)="consultaCEP($event.target.value, f)">
+  <app-campo-control-erro 
+  [mostrarErro]="verificaValidTouched(cep)" 
+  msgErro="CEP é obrigatório.">
+  </app-campo-control-erro>
+  </div>
+
+  <div class="col-md-3"[ngClass]="aplicaCssErro(numero)">
+     
+        <label for="numero" class="bmd-label-floating">Número:</label>
+        <input  id="numero" name="numero" class="form-control" type="text" 
+    placeholder="Digite o número da casa" ngModel required #numero="ngModel">
+    <app-campo-control-erro 
+    [mostrarErro]="verificaValidTouched(numero)" 
+    msgErro="Número é obrigatório.">
+    </app-campo-control-erro>
+    </div>
+
+    <div class="col-md-6">
+     
+        <label for="complemento" class="bmd-label-floating">Complemento:</label>
+        <input  id="complemento" name="complemento" class="form-control" type="text" 
+    placeholder="Ex.: Casa, apartamento..." ngModel #complemento="ngModel">
+
+    </div>
+</div>
+<br>
+<div class="form-group row">
+    <div class="col-sm-12" [ngClass]="aplicaCssErro(rua)">
+    <label for="rua" class="bmd-label-floating">Rua:</label>
+    <input type="text" name="rua" id="rua" class="form-control" 
+     ngModel required #rua="ngModel" readonly>
+     <app-campo-control-erro 
+     [mostrarErro]="verificaValidTouched(rua)" 
+     msgErro="Rua é obrigatória.">
+     </app-campo-control-erro>
+  </div>
+  </div>
+
+  <div class="form-group row">
+      <div class="col-md-5" [ngClass]="aplicaCssErro(bairro)">
+      <label for="bairro" class="bmd-label-floating">Bairro:</label>
+      <input type="text" name="bairro" id="bairro" class="form-control" 
+       ngModel required #bairro="ngModel" readonly>
+       <app-campo-control-erro 
+       [mostrarErro]="verificaValidTouched(bairro)" 
+       msgErro="Bairro é obrigatório.">
+       </app-campo-control-erro>
+    </div>
+
+    <div class="col-md-4" [ngClass]="aplicaCssErro(cidade)">
+        <label for="cidade" class="bmd-label-floating">Cidade:</label>
+        <input type="text" name="cidade" id="cidade" class="form-control" 
+         ngModel required #cidade="ngModel" readonly>
+         <app-campo-control-erro 
+         [mostrarErro]="verificaValidTouched(cidade)" 
+         msgErro="Cidade é obrigatória.">
+         </app-campo-control-erro>
+      </div>
+
+      <div class="col-md-3" [ngClass]="aplicaCssErro(estado)">
+          <label for="estado" class="bmd-label-floating">Estado:</label>
+          <input type="text" name="estado" id="estado" class="form-control" 
+           ngModel required #estado="ngModel" readonly>
+           <app-campo-control-erro 
+           [mostrarErro]="verificaValidTouched(estado)" 
+           msgErro="Estado é obrigatório.">
+           </app-campo-control-erro>
+        </div>
+    </div>
+  </div>
+<br>
+<div class="col-sm-12">
+<button type="submit" class="btn btn-primary"
+[disabled]="!f.valid">Enviar</button>
+</div>
+<app-form-debug [form]="f"></app-form-debug>
+
+</form>
+</div>

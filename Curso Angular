@@ -1,0 +1,289 @@
+	Aula 1:
+*Framework da google
+https://angular.io
+Parceria Google + Microsoft
+	Componente -> o que o usuário vai ver
+	Metadata -> processamento das classes
+	Data Binding -> dado a ser mostrado na tela
+	Comportamento da view
+
+	Componente -> Serviço -> Backend
+	
+	Aula 2:
+Terminal:
+	ng new nomeprojeto -> cria um novo projeto (instala as bibliotecas do angular 2 no diretório)
+	ng serve -> ligar servidor (localhost:4200)
+
+	Aula 3:
+Terminal:
+	ng g c meu-primeiro2 -> cria component automatizado
+
+	Aula 4: TypeScript
+A gente só trabalha com JavaScript/EcmaScript 2015/17.
+EcmaScript (ES) -> versão nova do JavaScript
+Com TypeScript a gente adiciona tipagem de dados e algumas funcionalidades OO que o javascript não tem, como interfaces. 
+babel.io -> converter código typescript para js puro
+
+	Aula 5: Módulos (ngModule)
+Módulo: serve para controlar o que um módulo pode ver
+Um módulo pode conversar com o outro
+
+ng new nome-da-minha-aplicacao -> cria uma aplicação 
+ng g m nomemodulo -> criar modulo
+ng g c nomecomponente -> criar componente
+
+	Aula 6: Templates
+
+	Aula 7: Serviços
+*Responsável por fazer a comunicação com o servidor
+	ng g s nomeserviço -> criar um serviço
+
+	Injeção de Dependência
+
+	Aula 8: Plugins Angular
+
+	Aula 9: Property Binding
+Valor do Component para o Template
+Usa-se colchetes <img [src]="urlimg"/>
+Formato padrão é através de bind-nomePropriedade <img bind-src="urlimg"/>
+Quando não existe uma propriedade no elemento, usa-se [atrr.colspan]
+
+	Aula 10: Class e Style Binding
+
+	Aula 11: Event binding
+Valor do Template para o Componente
+Usa-se parênteses <button (click)="onClick()"/>
+Método "handler" declarado no Componente
+Forma canônica <button on-click="onClick()"/>
+
+	Aula 12: Two-way data binding
+Valor do Template para o Componente e vice-versa
+Usa-se binding de eventos + propriedades
+Forma mais simples é fazer o binding no ngModel
+Usa-se sintaxe de binding de eventos+propriedade:
+	<input type="text" [(ngModel)]="nome"/>
+Forma canônica é:
+	<input type="text" bindon-ngModel="nome"/>
+
+	Aula 13: Reusando Componentes com Input properties
+
+	Aula 14: Emitindo Eventos com Output properties
+
+	Aula 15: Ciclo de vida do componente
+
+	Aula 16: Acesso ao DOM e ao Template com ViewChild
+	
+	Aula 17: Angular CLI: instalação e criação de projetos: ng new e ng serve
+
+**CLI já cria os arquivos necessários e faz os imports automaticamente**
+
+sudo npm install -g angular-cli -> instala o CLI
+ng new nomedoprojeto -> cria novo projeto
+
+	Aula 18: Angular CLI: Criando components, services: ng generate
+	
+cd diretivas
+ng g c nomecomponent -> cria component
+ng g s nomecomponent/nomeserviço -> cria serviço dentro do component
+
+	Aula 19: Angular CLI: Usando pré-processadores (Sass, Less, Stylus)
+ng config schematics.@schematics/angular:component.styleext scss﻿ -> modifica a extensão dos próximos arquivos de estilo para scss
+
+
+	Aula 20: Angular CLI: ng lint, ng test, ng e2e
+ng lint -> verifica se tem algum erro nos códigos conforme as boas práticas
+ng test -> verifica se tem algum erro nos arquivos de teste (teste.component.spec.ts)
+ng e2e -> 
+
+	Aula 21: Angular CLI: Estrutura do projeto
+
+	Aula 22: Gerando Build de produção
+ng build -> cria pasta dist com arquivos minificados
+
+sudo npm install http-server -g -> no terminal para instalar o http-server
+http-server -> inicia server local sem precisar de apache, executar na pasta dist/projeto
+
+	Aula 23: Angular CLI: instalando bibliotecas (bootstrap, jquery, materialize, lodash)
+npm install --save bootstrap -> instala o bootstrap dentro do projeto 
+npm install --save bootstrap@next -> instala a versão mais recente do bootstrap dentro do projeto
+npm install --save jquery -> instala o jquery
+npm install --save tether -> instala o tether
+
+Procurar arquivo angular.json e ir até os scripts[] e styles[]
+	
+            "styles": [
+              "src/styles.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.css"
+            ],
+            "scripts": ["./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.js",
+              "./node_modules/tether/dist/js/tether.js"]
+          },
+	
+---------------------------------------------------------------------------------------------------
+Materialize - outra biblioteca CSS
+*também precisa do jquery
+
+npm install --save materialize-css
+npm install --save angular2-materialize
+
+	Aula 24: Introdução e tipos de diretivas no Angular 2
+*Diretivas são instruções para o template
+
+	Aula 25: Diretivas: ngIf
+	
+	Ex.: ngIf
+
+  <div *ngIf="!mostrarCursos" >
+    Não existem cursos para serem listados       -> se mostrarCursos() for diferente de true, mostrar a frase
+  </div>
+
+	Ex.: <hidden>
+
+  <div [hidden]="!mostrarCursos"  >
+      Lista de cursos aqui.
+    </div>	
+	
+*Usar hidden para ramificações pequenas
+
+	Aula 26: Diretivas ngSwitch, ngSwitchCase e ngSwitchDefault
+
+	Aula 27: Diretiva ngFor
+
+	Aula 28: Diretivas: sobre o * e template
+
+	Aula 29: Diretiva ngClass
+
+	Aula 30: Diretiva : ngSTyle
+
+	Aula 31: Diretiva: Operador elvis
+
+	Aula 32: Diretiva: ng-content
+
+
+	Aula 33: Criando uma diretiva de atributo
+(pasta shared) ng g d nome-diretiva -> cria diretiva de atributo (para alterar elementos HTML)
+elementRef -> não é recomendado usar, pois é inseguro
+Renderer -> mais recomendado
+
+	Aula 34: Diretivas: HostListener e HostBinding
+
+	Aula 35: Diretivas: Input e Property Binding
+
+	Aula 36: Criando uma diretiva de estrutura (ngElse)
+
+	Aula 37: Introdução a Serviços
+Serviços: buscam dados no servidor, servem também para não repetir código
+
+	Aula 38: Criando um serviço (Service)
+
+	Aula 39: Injeção de Dependência (DI) + como usar um serviço em um componente
+	
+	Aula 40: Escopo de instâncias de serviços e módulos (singleton e várias instâncias)
+
+	Aula 41: Comunicação entre componentes usando serviços (broadcast de eventos)
+
+	Aula 42: Injetando um serviço em outro serviço
+
+	Aula 43: Pipes (usando pipes, parâmetros e pipes aninhados)
+Transforma um valor para ser usado dentro de um template
+
+	Aula 44: Criando um Pipe
+ng g p nome-do-pipe
+
+	Aula 45: Aplicando Locale (internacionalização) nos Pipes
+
+	Aula 46: Pipes: Criando um Pipe "Puro"
+
+	Aula 47: Pipes: Criando um Pipe "Impuro"
+
+	Aula 48: Pipes: Async (assíncrono)
+	Serve para conseguir fazer a saída de um valor no template mesmo que o valor demore um pouco
+
+	Aula 49: Rotas: Introdução
+
+	Aula 50: Rotas: Configurando rotas simples
+
+	Aula 51: Rotas: RouterLink: definindo rotas no template
+
+	Aula 52: Rotas: Aplicando CSS em rotas ativas
+
+	Aula 53
+
+	Aula 54
+
+	Aula 55
+
+	Aula 56
+
+	Aula 57
+
+	Aula 58
+
+	Aula 59
+
+	Aula 60
+
+	Aula 61 -- 13:00
+
+
+	Aula 69
+
+	Aula 72: Formulários (template vs data / reativo) Introdução
+
+	Template Driven
+		-Formulário é criado e configurado no HTML
+		-Validações são feitas no template HTML
+		-Amgular cria/deduz um FormGroup do código HTML
+		-Valores do form são submetidos com ngSubmit
+	Data Driven (Reativo)
+		-Formulário é criado e configurado no Componente
+		-Validações são feitas no Component
+		-Angular usa o FormGroup criado no Component
+		-Form já está no Component e não precisa do ngSubmit
+
+
+	Aula 89: Formulários reativos: Configuração (Módulo e Componente)
+
+	Aula 90: Formulários reativos: Criando um form com código Angular
+	
+	Curso Angular: Atualizando projetos para Angular v6
+
+	Aula 120:
+preserveWhitespaces: true -> deixa espaço em branco na quebra de linha (útil)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

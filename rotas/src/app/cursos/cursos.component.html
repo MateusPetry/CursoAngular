@@ -1,0 +1,20 @@
+<div class="container">
+<h1>
+  Lista de cursos
+</h1>
+
+<p>Página: {{ pagina }}</p>
+
+<div class="list-group">
+    <a class="list-group-item list-group-item-action"
+    *ngFor="let curso of cursos" 
+    [routerLink]="['/cursos', curso.id]">
+    {{curso.nome}}
+  </a>
+  </div>
+  <br>
+  <div class="gridBtn">
+  <button (click)="proximaPagina()" class="btn btn-primary">Próxima Página</button>
+  <button (click)="voltarPagina()" class="btn btn-danger gridBtn btnVoltarPagina">Página anterior</button>
+  </div>
+</div>

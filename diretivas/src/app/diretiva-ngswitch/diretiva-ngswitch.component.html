@@ -1,0 +1,16 @@
+<h5>Diretiva ngSwitch, ngSwitchCase e ngSwitchDefault</h5>
+<div>          
+          <button
+          (click)="aba = 'home'">Home</button>     
+          <button
+          (click)="aba = 'features'">Features</button>
+          <button
+          (click)="aba = 'pricing'">Pricing</button>
+        </div>
+        
+  <div [ngSwitch]="aba">
+      <p *ngSwitchCase="'home'">Modo mapa ativado</p>
+      <p *ngSwitchCase="'features'">Modo features ativado</p>
+      <p *ngSwitchCase="'pricing'">Modo pricing ativado</p>
+      <p *ngSwitchDefault>Default</p>
+    </div>
